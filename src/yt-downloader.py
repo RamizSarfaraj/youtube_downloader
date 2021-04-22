@@ -23,6 +23,7 @@ def audio_downloader():
         s = 1
         for v in t:
             print(str(s)+". "+str(v))
+            print("\n")
             s += 1
 
         n = int(input("\n\nEnter the number of the video: "))
@@ -42,7 +43,7 @@ def audio_downloader():
         if ans == 'y' or 'Y':
             if os.path.exists(full_path):
                 os.remove(full_path)
-                print("\n\n\t\t\tDELETED")
+                print("\n\n\t\t\tDELETED\n\n")
             else: print("\n\nFile does not exist.")
         else: print("Aborting Operation")
 
@@ -57,18 +58,21 @@ def video_downloader():
 
     title = video.title
 
-    v = video.streams.filter(adaptive=True).all()# extracting the video information
+    # v = video.streams.filter().all()# extracting the video information
+    v = video.streams.get_highest_resolution()
     # adaptive filter lists the best quality first
     path = input(str("\n\nEnter the target directory : "))
 
     try:
-        s = 0
-        for i in v:
-            print(str(s)+". "+str(i))
-            s += 1
+        # s = 1
+        # for i in v:
+            # print(str(s)+". "+str(i))
+            # print("\n")
+            # s += 1
 
-        n = int(input("Enter the number of the video: "))
-        vid = v[n-1]
+        # n = int(input("Enter the number of the video: "))
+        # vid = v[n-1]
+        vid = v
 
         print("\nDownloading the video file :: " + title)
         vid.download(output_path=path)
