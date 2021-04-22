@@ -23,10 +23,10 @@ then follow the instructions.
 ---
 To Convert a **Video to Audio**
 
-<<<<<<< HEAD
 run ::
 `python3 src/video2audio.py`
 
 Follow the instructions.
-Uses moviepy to change the format.
+uses moviepy to change the format.
+
 =========================================================
