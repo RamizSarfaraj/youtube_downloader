@@ -1,5 +1,3 @@
-# yt downloader markdown
-
 # YouTube audio and video downloader.
 
 This process uses two main libraries
@@ -9,11 +7,10 @@ This process uses two main libraries
 
 To Download **Audio of a YouTube Video or a YouTube Video** 
 
-run
+run ::
 
----
 
-`python3 y[t-downloader.py](http://t-downloader.py/)` 
+`python3 src/yt-downloader.py` 
 
 then follow the instructions. 
 
@@ -22,5 +19,11 @@ then follow the instructions.
 ***For video*** : For video it straight up downloads the video. Nothing interesting. Sorry.
 
 ---
+To Convert a **Video to Audio**
 
+run ::
+`python3 src/video2audio.py`
+
+Follow the instructions.
+Uses moviepy to change the format.
 ---
