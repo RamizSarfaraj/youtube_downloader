@@ -25,21 +25,20 @@ def audio_downloader():
             print(str(s)+". "+str(v))
             s += 1
 
-        n = int(input("Enter the number of the video: "))
+        n = int(input("\n\nEnter the number of the video: "))
         aud = t[n-1]
 
         print("\nDownloading : " + title)
         aud.download(output_path=path) # downloads as mp4 without the video just the audio portion, technically a video.
         print("\n\nConverting to mp3")
 
-        print("\n\nChange file type by running video2audion pyhon file.")
         for file in [n for n in os.listdir(path) if re.search('mp4',n)]:
             full_path = os.path.join(path, file)
             output_path = os.path.join(path, os.path.splitext(file)[0] + '.mp3')
             clip = mp.AudioFileClip(full_path) #.subclip(10,) # disable if do not want any clipping
             clip.write_audiofile(output_path)
 
-        ans = input(str("\n\nDo you want to the mp4 file? [y/n] : " ))
+        ans = input(str("\n\nDo you want to DELETE the mp4 file? [y/n] : " ))
         if ans == 'y' or 'Y':
             if os.path.exists(full_path):
                 os.remove(full_path)
