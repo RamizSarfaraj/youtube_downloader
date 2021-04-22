@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+******************************************************************************************
+>>>>>>> 633aee02ce6f447591a32699a5e40b016067cf6c
 # YouTube audio and video downloader.
 
 This process uses two main libraries
@@ -21,9 +25,12 @@ then follow the instructions.
 ---
 To Convert a **Video to Audio**
 
+<<<<<<< HEAD
 run ::
 `python3 src/video2audio.py`
 
 Follow the instructions.
 Uses moviepy to change the format.
+=======
+>>>>>>> 633aee02ce6f447591a32699a5e40b016067cf6c
 ---
