@@ -5,6 +5,7 @@ import os
 import re
 import sys
 
+
 def audio_downloader():
     """
     This function downloads the audio format of the youtube video.
@@ -16,6 +17,7 @@ def audio_downloader():
 
     t = audio.streams.filter(only_audio=True, adaptive=True, file_extension='mp4').all() # extracting the audio information
 
+    print("\nDownloading : " + title)
     path = input(str("\n\nEnter the target directory : "))
 
     try:
@@ -24,10 +26,9 @@ def audio_downloader():
             print(str(s)+". "+str(v))
             s += 1
 
-        n = int(input("Enter the number of the video: "))
+        n = int(input("\n\nEnter the number of the video: "))
         aud = t[n-1]
 
-        print("\nDownloading : " + title)
         aud.download(output_path=path) # downloads as mp4 without the video just the audio portion, technically a video.
         print("\n\nConverting to mp3")
 
@@ -59,6 +60,8 @@ def video_downloader():
 
     v = video.streams.filter(adaptive=True).all()# extracting the video information
     # adaptive filter lists the best quality first
+
+    print("\nDownloading the video file :: " + title)
     path = input(str("\n\nEnter the target directory : "))
 
     try:
@@ -70,7 +73,6 @@ def video_downloader():
         n = int(input("Enter the number of the video: "))
         vid = v[n-1]
 
-        print("\nDownloading the video file :: " + title)
         vid.download(output_path=path)
         print("\n\nCompleted.")
 
