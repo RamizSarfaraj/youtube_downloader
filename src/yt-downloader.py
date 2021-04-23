@@ -17,6 +17,7 @@ def audio_downloader():
 
     t = audio.streams.filter(only_audio=True, adaptive=True, file_extension='mp4').all() # extracting the audio information
 
+    print("\nDownloading : " + title)
     path = input(str("\n\nEnter the target directory : "))
 
     try:
@@ -29,7 +30,6 @@ def audio_downloader():
         n = int(input("\n\nEnter the number of the video: "))
         aud = t[n-1]
 
-        print("\nDownloading : " + title)
         aud.download(output_path=path) # downloads as mp4 without the video just the audio portion, technically a video.
         print("\n\nConverting to mp3")
 
@@ -63,6 +63,8 @@ def video_downloader():
     # v = video.streams.filter().all()# extracting the video information
     v = video.streams.get_highest_resolution()
     # adaptive filter lists the best quality first
+
+    print("\nDownloading the video file :: " + title)
     path = input(str("\n\nEnter the target directory : "))
 
     try:
@@ -76,7 +78,6 @@ def video_downloader():
         # vid = v[n-1]
         vid = v
 
-        print("\nDownloading the video file :: " + title)
         vid.download(output_path=path)
         print("\n\nCompleted.")
 
