@@ -53,6 +53,8 @@ def audio_downloader():
 
 
 def video_downloader():
+
+
     yt_link = input(str("Enther the link : "))
     video = YouTube(yt_link)
 
@@ -100,6 +102,7 @@ if __name__ == '__main__':
         elif ans == "b":
             print("----------Video Downloader Activated----------")
             print("\n\n")
+            print("Video with pytube will not be the highest of qualities out there.")
             video_downloader()
             break
 
