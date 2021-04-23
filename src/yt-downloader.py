@@ -11,7 +11,13 @@ def audio_downloader():
     This function downloads the audio format of the youtube video.
     """
     yt_link = input(str("Enter the link : "))
-    audio = YouTube(yt_link)
+    try:
+        audio = YouTube(yt_link)
+    except: 
+        conf =  input(str("\n\nSomething wrong.\n\nTry again : [any alphabet / {press control + c}] : "))
+        if conf == 'y' or 'Y':
+            redo = audio_downloader()
+
 
     title = audio.title
 
@@ -54,9 +60,11 @@ def audio_downloader():
 
 def video_downloader():
 
-
-    yt_link = input(str("Enther the link : "))
-    video = YouTube(yt_link)
+    try:
+        video = YouTube(yt_link)
+    except: 
+        print ("\n\nSomething wrong.\t\t Try again.\n\n")
+        redo = video_downloader()
 
     title = video.title
 
